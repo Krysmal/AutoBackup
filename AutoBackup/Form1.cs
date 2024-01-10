@@ -1,4 +1,5 @@
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace AutoBackup
 {
@@ -17,14 +18,25 @@ namespace AutoBackup
             
             if (Directory.Exists(path))
             {
-                
+                string[] foldery = Directory.GetDirectories(path);
                 string[] pliki = Directory.GetFiles(path);
 
-               
 
-                
+
+                listBox1.Items.Add("Foldery: ");
+
+                foreach (string folder in foldery)
+                {
+                    listBox1.Items.Add(folder);
+                }
+                listBox1.Items.Add("");
+                listBox1.Items.Add("");
+                listBox1.Items.Add("");
+                listBox1.Items.Add("Pliki: ");
+
                 foreach (string element in pliki)
                 {
+                    
                     listBox1.Items.Add(element);
                 }
             }
