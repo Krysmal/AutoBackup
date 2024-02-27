@@ -13,10 +13,12 @@ namespace AutoBackup
             InitializeComponent();
         }
 
-        
-        
+        string[] DirFrom;
+        string[] FilesFrom;
+        string[] DirTo;
+        string[] FilesTo;
 
-           private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
             listBox2.Items.Clear();
@@ -24,21 +26,21 @@ namespace AutoBackup
             pathTo = textBox2.Text;
             if (Directory.Exists(pathFrom))
             {
-                string[] foldery = Directory.GetDirectories(pathFrom);
-                string[] pliki = Directory.GetFiles(pathFrom);
+                DirFrom = Directory.GetDirectories(pathFrom);
+                FilesFrom = Directory.GetFiles(pathFrom);
 
                 listBox1.Items.Add("Foldery: ");
 
-                foreach (string folder in foldery)
+                foreach (string dir in DirFrom)
                 {
-                    listBox1.Items.Add(folder);
+                    listBox1.Items.Add(dir);
                 }
                 listBox1.Items.Add("");
                 listBox1.Items.Add("");
                 listBox1.Items.Add("");
                 listBox1.Items.Add("Pliki: ");
 
-                foreach (string element in pliki)
+                foreach (string element in FilesFrom)
                 {
                     
                     listBox1.Items.Add(element);
@@ -53,21 +55,21 @@ namespace AutoBackup
 
             if (Directory.Exists(pathTo))
             {
-                string[] foldery = Directory.GetDirectories(pathTo);
-                string[] pliki = Directory.GetFiles(pathTo);
+                DirTo = Directory.GetDirectories(pathTo);
+                FilesTo = Directory.GetFiles(pathTo);
 
                 listBox2.Items.Add("Foldery: ");
 
-                foreach (string folder in foldery)
+                foreach (string element in DirTo)
                 {
-                    listBox2.Items.Add(folder);
+                    listBox2.Items.Add(element);
                 }
                 listBox2.Items.Add("");
                 listBox2.Items.Add("");
                 listBox2.Items.Add("");
                 listBox2.Items.Add("Pliki: ");
 
-                foreach (string element in pliki)
+                foreach (string element in FilesTo)
                 {
 
                     listBox2.Items.Add(element);
