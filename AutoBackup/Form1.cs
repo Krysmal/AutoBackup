@@ -8,9 +8,11 @@ namespace AutoBackup
     {
         string pathFrom,pathTo;
         string[] files;
+        ChangeList ChangeListWindow;
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         string[] DirFrom;
@@ -97,8 +99,70 @@ namespace AutoBackup
             }
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
+            if(DirFrom!=null&&DirTo!=null&&FilesFrom!=null&&FilesTo!=null)
+            {
+                List<string> CopyList = new List<string>();
+                bool check = true;
+                foreach (string element in DirFrom)
+                {
+                    check = true;
+                    foreach (string element2 in DirTo)
+                    {
+
+                        if (element == element2)
+                        {
+                            check = false;
+                        }
+
+
+                    }
+
+                    if (check)
+                    {
+                        CopyList.Add(element);
+                    }
+
+
+                }
+
+                foreach (string element in FilesFrom)
+                {
+                    check = true;
+                    foreach (string element2 in FilesTo)
+                    {
+
+                        if (element == element2)
+                        {
+                            check = false;
+                        }
+
+
+                    }
+
+                    if (check)
+                    {
+                        CopyList.Add(element);
+                    }
+                    
+                }
+                ChangeListWindow = new ChangeList();
+                ChangeListWindow.CopyList=CopyList;
+                ChangeListWindow.Show();
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("b³êdna œcie¿ka wejœciowa");
+
+            }
+
+
 
         }
     }
