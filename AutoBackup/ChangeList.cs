@@ -31,7 +31,14 @@ namespace AutoBackup
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
+            this.Close();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
