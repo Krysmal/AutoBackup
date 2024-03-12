@@ -156,6 +156,8 @@ namespace AutoBackup
                 ChangeListWindow = new ChangeList();
                 ChangeListWindow.CopyListD=CopyListD;
                 ChangeListWindow.CopyListF=CopyListF;
+                ChangeListWindow.pathTo=pathTo;
+                ChangeListWindow.pathFrom=pathFrom;
                 ChangeListWindow.Show();
             }
             else
