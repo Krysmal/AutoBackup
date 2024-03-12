@@ -108,7 +108,8 @@ namespace AutoBackup
         {
             if(DirFrom!=null&&DirTo!=null&&FilesFrom!=null&&FilesTo!=null)
             {
-                List<string> CopyList = new List<string>();
+                List<string> CopyListD = new List<string>();
+                List<string> CopyListF = new List<string>();
                 bool check = true;
                 foreach (string element in DirFrom)
                 {
@@ -126,7 +127,7 @@ namespace AutoBackup
 
                     if (check)
                     {
-                        CopyList.Add(element);
+                        CopyListD.Add(element);
                     }
 
 
@@ -148,12 +149,13 @@ namespace AutoBackup
 
                     if (check)
                     {
-                        CopyList.Add(element);
+                        CopyListF.Add(element);
                     }
                     
                 }
                 ChangeListWindow = new ChangeList();
-                ChangeListWindow.CopyList=CopyList;
+                ChangeListWindow.CopyListD=CopyListD;
+                ChangeListWindow.CopyListF=CopyListF;
                 ChangeListWindow.Show();
             }
             else

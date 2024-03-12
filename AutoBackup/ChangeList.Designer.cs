@@ -32,6 +32,8 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.buttonOK = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -50,34 +52,56 @@
             this.listBox1.ItemHeight = 20;
             this.listBox1.Location = new System.Drawing.Point(35, 61);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(724, 304);
+            this.listBox1.Size = new System.Drawing.Size(724, 484);
             this.listBox1.TabIndex = 1;
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(282, 387);
+            this.buttonOK.Location = new System.Drawing.Point(35, 551);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(92, 36);
+            this.buttonOK.Size = new System.Drawing.Size(185, 36);
             this.buttonOK.TabIndex = 2;
-            this.buttonOK.Text = "OK";
+            this.buttonOK.Text = "Skopiuj wszystko";
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(446, 387);
+            this.button1.Location = new System.Drawing.Point(603, 551);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 36);
+            this.button1.Size = new System.Drawing.Size(156, 36);
             this.button1.TabIndex = 3;
             this.button1.Text = "Anuluj";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(226, 551);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(194, 36);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Skopiuj foldery";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(426, 551);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(171, 36);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Skopiuj pliki";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // ChangeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 601);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.listBox1);
@@ -95,5 +119,7 @@
         private ListBox listBox1;
         private Button buttonOK;
         private Button button1;
+        private Button button2;
+        private Button button3;
     }
 }
